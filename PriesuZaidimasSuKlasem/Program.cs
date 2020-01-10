@@ -8,47 +8,31 @@ namespace PriesuZaidimasSuKlasem
     {
         static void Main()
         {
+            GameScreen game = new GameScreen(30, 30);
+            game.SetHero(new Hero(8, 8, "Herojus"));
 
-              int enemyCount = 0;
-               Random rnd = new Random();
-
-         //   GameScreen game = new GameScreen(30, 30);
-          //  game.SetHero(new Hero(8, 8, "Herojus"));
-
-            //mano herojus
-            Hero hero = new Hero(5, 8, "Herojus");
-            hero.PrintInfo();
-
-            //sukuriam priesu listą
-            List<Enemy> enemies = new List<Enemy>();
+            Random rnd = new Random();
+            int enemyCount = 0;
             for (int i = 0; i < 10; i++)
             {
-                enemies.Add(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
+                game.AddEnemy(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
                 enemyCount++;
             }
 
-            //atspaudinam priesu lista
-            foreach (Enemy enemy in enemies)
+            game.Render();
+            game.MoveHeroLeft();
+            game.MoveAllEnemiesDown();
+
+            Enemy secondEnemy = game.GetEnemyById(1);
+            if (secondEnemy != null)
             {
-                enemy.PrintInfo();
+                  secondEnemy.MoveDown();
             }
 
+            game.Render();
 
-            //pajudinam heroju ir priesus visus
-            hero.Moveleft();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.MoveDown();
-            }
-            
-            // atspausdinam herojaus ir priesu naujas pozicijas
-            hero.PrintInfo();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.PrintInfo();
-            }
 
-          //  Console.ReadKey();
+            Console.ReadKey();
 
 
         }
