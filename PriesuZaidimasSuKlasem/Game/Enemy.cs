@@ -4,25 +4,22 @@ using System.Text;
 
 namespace PriesuZaidimasSuKlasem.Game
 {
-    class Enemy
+    class Enemy : Unit
     {
 
         int id;
-        int x;
-        int y;
-        string name;
+       // int x;
+      //  int y;
+      //  string name;
 
-        public Enemy(int id, int x, int y, string name)
+        public Enemy(int id, int x, int y, string name) : base (x, y, name)
         {
             this.id = id;
-            this.x = x;
-            this.y = y;
-            this.name = name;
         }
 
         public void MoveDown()
         {
-            y++;
+            Y++;
         }
 
         public int GetId()
@@ -31,10 +28,10 @@ namespace PriesuZaidimasSuKlasem.Game
         }
 
 
-        public void PrintInfo()
-        {
-            Console.WriteLine($"Enemy position:{x},{y}");
-
-        }
+      //  public void PrintInfo()
+      //  {
+        //    Console.WriteLine($"Enemy position:{x},{y}");
+//
+      //  }
     }
 }
