@@ -22,5 +22,6 @@ namespace PriesuZaidimasSuKlasem.Game
             Console.WriteLine($" Unit {Name} is at {X}:{Y}");
         }
 
+
     }
 }

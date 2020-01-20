@@ -6,8 +6,8 @@ namespace PriesuZaidimasSuKlasem.Game
 {
     class GameScreen
     {
-        int width;
-        int height;
+        private int width;
+        private int height;
         Hero hero;
         private List<Enemy> enemies = new List<Enemy>();
 
@@ -24,12 +24,18 @@ namespace PriesuZaidimasSuKlasem.Game
 
         public void MoveHeroRight()
         {
-            hero.Moveleft();
+            if (hero.GetX() < width)
+            {
+                hero.MoveRight();
+            }
         }
 
         public void MoveHeroLeft()
         {
-            hero.Moveleft();
+            if (hero.GetX() > 0)
+            {
+                hero.Moveleft();
+            }
         }
 
         public void AddEnemy(Enemy enemy)

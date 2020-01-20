@@ -29,10 +29,16 @@ namespace PriesuZaidimasSuKlasem.Game
             X--;
         }
 
-       // public void PrintInfo()
-     //   {
-     //       Console.WriteLine($"Hero position:{x},{y}");
-     //   
-     //   }
+        // public void PrintInfo()
+        //   {
+        //       Console.WriteLine($"Hero position:{x},{y}");
+        //   
+        //   }
+
+        public int GetX()
+        {
+            return X;
+        }
+
     }
 }

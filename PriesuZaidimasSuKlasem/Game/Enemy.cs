@@ -28,10 +28,13 @@ namespace PriesuZaidimasSuKlasem.Game
         }
 
 
-      //  public void PrintInfo()
-      //  {
+        //  public void PrintInfo()
+        //  {
         //    Console.WriteLine($"Enemy position:{x},{y}");
-//
-      //  }
+        //
+        //  }
+
+
+
     }
 }
