@@ -4,24 +4,33 @@ using System.Text;
 
 namespace PriesuZaidimasSuKlasem.Game
 {
-    class Unit
+    abstract class Unit
     {
-        protected int X;
-        protected int Y;
+        public int X { get; protected set; }
+        public int Y { get; protected set; }
         private string Name;
+        private readonly char representSymbol;
 
-        public Unit(int x, int y, string name)
+        public Unit(int x, int y, string name, char representSymbol)
         {
             X = x;
             Y = y;
             Name = name;
+            this.representSymbol = representSymbol;
         }
 
-        public void PrintInfo()
+        public void Render()
         {
-            Console.WriteLine($" Unit {Name} is at {X}:{Y}");
+            Console.SetCursorPosition(X, Y);
+            Console.Write(representSymbol);
         }
+    }
+
+      //  public void PrintInfo()
+      //  {
+     //       Console.WriteLine($" Unit {Name} is at {X}:{Y}");
+    //    }
 
 
     }
-}
+

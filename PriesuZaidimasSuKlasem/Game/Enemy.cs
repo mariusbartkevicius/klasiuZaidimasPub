@@ -12,7 +12,7 @@ namespace PriesuZaidimasSuKlasem.Game
       //  int y;
       //  string name;
 
-        public Enemy(int id, int x, int y, string name) : base (x, y, name)
+        public Enemy(int id, int x, int y, string name) : base (x, y, name, '$')
         {
             this.id = id;
         }

@@ -8,18 +8,24 @@ namespace PriesuZaidimasSuKlasem.GUI
     {
         private Frame notActiveFrame;
         private Frame activeFrame;
-     //   private bool isActive = false;
+        private bool isActive = false;
         private TextLine textLine;
 
-        public bool IsActive { get; set; } = false;
+        public bool IsActive { 
+            get { return isActive; } 
+            set { isActive = value;
+                Render();
+            } 
+        }
 
         public string Label  //<-kam cia sitas??
         {
-            get { return textLine.Label; }
+            get { return textLine.Label;  }
             set { textLine.Label = value; }
         }
 
-        private string label = ""; //<-kam cia sitas??
+       // private string label = ""; //<-kam cia sitas??
+
 
         public Button(int x, int y, int width, int height, string buttonText) : base(x, y, width, height)
         {
@@ -47,6 +53,17 @@ namespace PriesuZaidimasSuKlasem.GUI
         {
             IsActive = true;
         }
+
+        public void SetDiactive()
+        {
+            IsActive = false;
+        }
+
+ //       public ButtonType GetType()
+  //      {
+  //          return buttonType;
+   //     }
+
 
     }
 }

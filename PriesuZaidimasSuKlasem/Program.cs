@@ -12,16 +12,20 @@ namespace PriesuZaidimasSuKlasem
         {
             Console.CursorVisible = false;
 
-            GameWindow gameWindow = new GameWindow();
-            gameWindow.Render();
+            GuiController guiController = new GuiController();
+            guiController.ShowMenu();
 
-            CreditWindow creditWindow = new CreditWindow();
-            creditWindow.Render();
+
+           // GameWindow gameWindow = new GameWindow();
+          //  gameWindow.Render();
+
+           // CreditWindow creditWindow = new CreditWindow();
+           // creditWindow.Render();
 
             Console.ReadKey();
 
-            //GameController myGame = new GameController();
-            //myGame.StartGame();
+         //  GameController myGame = new GameController();
+         //   myGame.StartGame();
 
         }
 

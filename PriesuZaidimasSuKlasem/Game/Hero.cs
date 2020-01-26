@@ -11,7 +11,7 @@ namespace PriesuZaidimasSuKlasem.Game
      //   private string name;
 
 
-            public Hero(int x, int y, string name) : base (x, y, name)
+            public Hero(int x, int y, string name) : base (x, y, name, '@')
         {
          //   this.x = x;
          //   this.y = y;
@@ -39,6 +39,7 @@ namespace PriesuZaidimasSuKlasem.Game
         {
             return X;
         }
+
 
     }
 }

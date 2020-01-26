@@ -21,31 +21,21 @@ namespace PriesuZaidimasSuKlasem.Contorler
 
         public void InitGame()
         {
-            GameScreen game = new GameScreen(30, 20);
-            game.SetHero(new Hero(8, 8, "Herojus"));
+            int gameWidth = 120;
+            int gameHeight = 30;
+
+            myGame = new GameScreen(gameWidth, gameHeight); 
+
+            myGame.SetHero(new Hero(gameWidth / 2, gameHeight - 5 , "Herojus"));
 
             Random rnd = new Random();
             int enemyCount = 0;
             for (int i = 0; i < 10; i++)
             {
-                game.AddEnemy(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
+                myGame.AddEnemy(new Enemy(enemyCount, rnd.Next(0, gameWidth), rnd.Next(0, 5), "enemy" + enemyCount));
                 enemyCount++;
             }
 
-            game.Render();
-            game.MoveHeroLeft();
-            game.MoveAllEnemiesDown();
-
-            Enemy secondEnemy = game.GetEnemyById(1);
-            if (secondEnemy != null)
-            {
-                secondEnemy.MoveDown();
-            }
-
-            game.Render();
-
-
-            Console.ReadKey();
 
         }
 
@@ -78,6 +68,8 @@ namespace PriesuZaidimasSuKlasem.Contorler
                     }
                 }
 
+                myGame.ActivateEnemies();
+                
                 myGame.Render();
 
                 // padarom pause. (parodom ekrana).

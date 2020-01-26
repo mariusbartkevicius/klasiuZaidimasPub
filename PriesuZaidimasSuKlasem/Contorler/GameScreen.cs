@@ -48,7 +48,7 @@ namespace PriesuZaidimasSuKlasem.Game
             foreach (Enemy enemy in enemies)
             {
                 enemy.MoveDown();
-            }
+            }                  
         }
 
         public Enemy GetEnemyById(int id)
@@ -65,11 +65,48 @@ namespace PriesuZaidimasSuKlasem.Game
 
         public void Render()
         {
-            hero.PrintInfo();
+            
             foreach (Enemy enemy in enemies)
             {
-                enemy.PrintInfo();
+                enemy.Render();
+            }
+            hero.Render();
+        }
+
+       internal void ActivateEnemies()
+        {
+           MoveAllEnemiesDown();
+           RemoveEnemiesOutOfScreen();
+        }
+
+        private void RemoveEnemiesOutOfScreen()
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].Y > height)
+                {
+                    RemoveEnemy(enemies[i]);
+                    i--;
+                }
             }
         }
+
+        private void RemoveEnemy(Enemy enemy)
+        {
+            enemies.Remove(enemy);
+        }
+
+        /*
+        private void RemoveEnemyByID(int id)
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].GetId == id)
+                {
+                    enemies.RemoveAt(i);
+                }
+            }
+        }
+        */
     }
 }
