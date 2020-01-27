@@ -13,13 +13,16 @@ namespace PriesuZaidimasSuKlasem.Contorler
 
         public GuiController()
         {
-          
+            ShowMenu();
+            ShowCreditWindow();
         }
 
         public void ShowMenu()
         {
             GameWindow gameWindow = new GameWindow();
             gameWindow.Render();
+
+
         }
 
         public void ShowCreditWindow()

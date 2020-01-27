@@ -48,6 +48,7 @@ namespace PriesuZaidimasSuKlasem.Game
             foreach (Enemy enemy in enemies)
             {
                 enemy.MoveDown();
+             
             }                  
         }
 
@@ -74,9 +75,25 @@ namespace PriesuZaidimasSuKlasem.Game
         }
 
        internal void ActivateEnemies()
-        {
+        {   
            MoveAllEnemiesDown();
            RemoveEnemiesOutOfScreen();
+           EnemyHitHero();
+        }
+
+        private bool EnemyHitHero()
+        {
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].Y == hero.Y && enemies[i].X == hero.X)
+                {
+                    Console.WriteLine("Danger. You were hit by enemy!");
+                    return true;
+                }
+            }return false;
+            
+
+
         }
 
         private void RemoveEnemiesOutOfScreen()

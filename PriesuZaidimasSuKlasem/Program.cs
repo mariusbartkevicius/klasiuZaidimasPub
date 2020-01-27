@@ -16,16 +16,10 @@ namespace PriesuZaidimasSuKlasem
             guiController.ShowMenu();
 
 
-           // GameWindow gameWindow = new GameWindow();
-          //  gameWindow.Render();
-
-           // CreditWindow creditWindow = new CreditWindow();
-           // creditWindow.Render();
-
             Console.ReadKey();
 
-         //  GameController myGame = new GameController();
-         //   myGame.StartGame();
+           GameController myGame = new GameController();
+           myGame.StartGame();
 
         }
 
